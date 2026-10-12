@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mental Health foundation</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #181818;
+    }
+
+    :root {
+      --purple: #54239b;
+      --dark-purple: #351264;
+      --magenta: #a90076;
+      --pink: #e50087;
+      --yellow: #ffed3d;
+      --light: #f2eafa;
+      --white: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--purple);
+    }
+
+    .logo small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--magenta);
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .nav-button {
+      background: var(--pink);
+      color: white;
+      padding: 11px 20px;
+    }
+
+    .hero {
+      min-height: 550px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      background: var(--purple);
+      color: white;
+    }
+
+    .hero-content {
+      padding: 80px 10%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-label {
+      color: var(--yellow);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 80px);
+      line-height: .9;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 500px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      min-height: 550px;
+
+      background:
+        linear-gradient(rgba(84, 35, 155, .15),
+          rgba(84, 35, 155, .15)),
+        url("https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      background: var(--purple);
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: var(--pink);
+    }
+
+    .button.white {
+      background: white;
+      color: var(--purple);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .intro h2 {
+      color: var(--purple);
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .intro-image {
+      height: 350px;
+
+      background:
+        url("https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+
+    .lottery {
+      background: var(--yellow);
+    }
+
+    .lottery-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .lottery h2 {
+      color: var(--purple);
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .lottery-card {
+      background: white;
+      padding: 40px;
+      box-shadow: 10px 10px 0 var(--purple);
+    }
+
+    .lottery-card h3 {
+      color: var(--purple);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .light {
+      background: var(--light);
+    }
+
+    .title {
+      font-size: 45px;
+      color: var(--purple);
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+    }
+
+    .card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: var(--purple);
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .content.reverse .content-image {
+      order: 2;
+    }
+
+    .content-image {
+      height: 380px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content-text h2 {
+      color: var(--purple);
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .content-text p {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .content-text ul {
+      list-style: none;
+    }
+
+    .content-text li {
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+      font-weight: bold;
+    }
+
+    .content-text li::before {
+      content: "→";
+      color: var(--pink);
+      margin-right: 10px;
+    }
+
+    .cta {
+      background: var(--magenta);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 25px;
+
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+
+    .stories {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .story {
+      padding: 35px;
+      background: var(--light);
+    }
+
+    .story h3 {
+      color: var(--purple);
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .story-side {
+      padding: 35px;
+      background: var(--purple);
+      color: white;
+    }
+
+    .story-side h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: var(--dark-purple);
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: var(--yellow);
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      font-size: 13px;
+    }
+
+    @media(max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero,
+      .intro,
+      .lottery-inner,
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 350px;
+        order: -1;
+      }
+
+      .hero-content {
+        padding: 60px 8%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .content.reverse .content-image {
+        order: 0;
+      }
+
+      .stories {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      section {
+        padding: 50px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .intro h2,
+      .lottery h2,
+      .title {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <header>
+
+    <div class="navbar">
+
+      <a href="#home" class="logo">
+        MENTAL HEALTH
+        <small>foundation</small>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#mental-health">Mental Health</a>
+        <a href="#support">Support</a>
+        <a href="#stories">Stories</a>
+      </nav>
+
+      <a href="#donate" class="nav-button">
+        Donate
+      </a>
+
+    </div>
+
+  </header>
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        MENTAL HEALTH foundation
+      </div>
+
+      <h1>
+        Current<br>
+        Mental<br>
+        Health
+      </h1>
+
+      <p>
+        Mental health affects us all. Discover more about
+        mental health, wellbeing and how you can help yourself
+        and others.
+      </p>
+
+      <div>
+        <a href="#about" class="button white">
+          Find out more
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-image"></div>
+
+  </section>
+  <section id="about">
+
+    <div class="container intro">
+
+      <div>
+
+        <h2>
+          Get involved
+        </h2>
+
+        <p>
+          The mental Health foundation is a chance to start
+          conversations about mental health and wellbeing.
+          Together we can make mental health a priority.
+        </p>
+
+        <a href="#support" class="button">
+          Get involved
+        </a>
+
+      </div>
+
+      <div class="intro-image"></div>
+
+    </div>
+
+  </section>
+  <section class="lottery">
+
+    <div class="container lottery-inner">
+
+      <div>
+
+        <h2>
+          Weekly<br>
+          Charity Lottery
+        </h2>
+
+        <p>
+          Enter the weekly charity lottery and help support
+          mental health projects while having a chance to win.
+        </p>
+
+      </div>
+
+      <div class="lottery-card">
+
+        <h3>
+          Win while supporting mental health
+        </h3>
+
+        <p>
+          Your participation helps fund campaigns, research
+          and mental health support.
+        </p>
+
+        <br>
+
+        <a href="#donate" class="button">
+          Enter now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section class="light">
+
+    <div class="container">
+
+      <h2 class="title">
+        How you can help
+      </h2>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80')">
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              Why mental health matters
+            </h3>
+
+            <p>
+              Understanding mental health helps us
+              understand ourselves and those around us.
+            </p>
+
+            <a href="#mental-health" class="button">
+              Read more
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80')">
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              Help and support
+            </h3>
+
+            <p>
+              Find information and resources for yourself
+              or someone you care about.
+            </p>
+
+            <a href="#support" class="button">
+              Get support
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80')">
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              Take action
+            </h3>
+
+            <p>
+              Small actions can make a big difference
+              to mental health awareness.
+            </p>
+
+            <a href="#donate" class="button">
+              Take action
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section id="donate">
+
+    <div class="container content">
+
+      <div class="content-image"
+        style="background-image:url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1000&q=80')">
+      </div>
+
+      <div class="content-text">
+
+        <h2>
+          Donate
+        </h2>
+
+        <p>
+          Your donation can help support mental health
+          awareness, education and access to support.
+        </p>
+
+        <p>
+          Every contribution can make a difference.
+        </p>
+
+        <button class="button" onclick="donate()">
+          Donate now
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section class="light" id="mental-health">
+
+    <div class="container content reverse">
+
+      <div class="content-image"
+        style="background-image:url('https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1000&q=80')">
+      </div>
+
+      <div class="content-text">
+
+        <h2>
+          Explore mental health
+        </h2>
+
+        <p>
+          Mental health is an important part of our overall
+          wellbeing. Everyone's experience is different.
+        </p>
+
+        <ul>
+          <li>Understanding mental health</li>
+          <li>Looking after your wellbeing</li>
+          <li>Getting professional help</li>
+          <li>Supporting someone else</li>
+          <li>Finding useful resources</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section>
+
+    <div class="container content">
+
+      <div class="content-text">
+
+        <h2>
+          Diagnosed mental health conditions
+        </h2>
+
+        <p>
+          Mental health conditions can affect thoughts,
+          feelings and behaviour. Understanding them can
+          help reduce stigma.
+        </p>
+
+        <ul>
+          <li>Anxiety disorders</li>
+          <li>Depression</li>
+          <li>Eating disorders</li>
+          <li>OCD</li>
+          <li>PTSD</li>
+          <li>Bipolar disorder</li>
+        </ul>
+
+      </div>
+
+      <div class="content-image"
+        style="background-image:url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80')">
+      </div>
+
+    </div>
+
+  </section>
+  <section class="light">
+
+    <div class="container content reverse">
+
+      <div class="content-image"
+        style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80')">
+      </div>
+
+      <div class="content-text">
+
+        <h2>
+          People and communities
+        </h2>
+
+        <p>
+          Relationships, communities and our environment
+          can all influence our mental health.
+        </p>
+
+        <ul>
+          <li>Young people</li>
+          <li>Families</li>
+          <li>Workplaces</li>
+          <li>Schools</li>
+          <li>Communities</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+  <section>
+
+    <div class="container content">
+
+      <div class="content-text">
+
+        <h2>
+          Factors that affect mental health
+        </h2>
+
+        <p>
+          Many different things can influence our mental
+          health throughout our lives.
+        </p>
+
+        <ul>
+          <li>Relationships</li>
+          <li>Work and education</li>
+          <li>Money and housing</li>
+          <li>Physical health</li>
+          <li>Stress</li>
+          <li>Life experiences</li>
+        </ul>
+
+      </div>
+
+      <div class="content-image"
+        style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80')">
+      </div>
+
+    </div>
+
+  </section>
+  <section class="cta" id="support">
+
+    <div class="container">
+
+      <h2>
+        We are the home of
+        Mental Health Awareness
+      </h2>
+
+      <p>
+        Learn more, find support and discover how you can
+        help improve mental health awareness.
+      </p>
+
+      <a href="#about" class="button white">
+        Read more about our work
+      </a>
+
+    </div>
+
+  </section>
+  <section id="stories">
+
+    <div class="container">
+
+      <h2 class="title">
+        Our work
+      </h2>
+
+      <div class="stories">
+
+        <div class="story">
+
+          <h3>
+            Our work changes lives
+          </h3>
+
+          <p>
+            We work to improve understanding of mental
+            health and challenge stigma. Through campaigns,
+            research and support, we help create a society
+            where mental health is taken seriously.
+          </p>
+
+          <br>
+
+          <a href="#mental-health" class="button">
+            Learn more
+          </a>
+
+        </div>
+
+        <div class="story-side">
+
+          <h3>
+            Donate
+          </h3>
+
+          <p>
+            Help us continue our work and support people
+            affected by mental health problems.
+          </p>
+
+          <br>
+
+          <a href="#donate" class="button white">
+            Donate
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="reviews" id="reviews">
+
+    <div class="container">
+
+      <h2 class="title">
+        What people say
+      </h2>
+
+      <div class="review-grid">
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “This campaign helped me understand mental
+            health in a completely different way. It made
+            starting conversations with friends much easier.”
+          </p>
+
+          <div class="reviewer">
+            — Sample visitor
+          </div>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “A really useful resource. I found the information
+            easy to understand and it encouraged me to take
+            my own wellbeing more seriously.”
+          </p>
+
+          <div class="reviewer">
+            — Sample visitor
+          </div>
+
+        </div>
+
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Mental health can be difficult to talk about,
+            but resources like this make it feel much more
+            normal to ask for help and support others.”
+          </p>
+
+          <div class="reviewer">
+            — Sample visitor
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="review-note">
+        These are sample testimonials for demonstration purposes.
+      </p>
+
+    </div>
+
+  </section>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>Mental Health</h3>
+
+          <p>
+            Working together to improve mental health
+            awareness and wellbeing.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#mental-health">Mental Health</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Get involved</h3>
+
+          <ul>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#about">Fundraise</a></li>
+            <li><a href="#about">Volunteer</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Mental Health foundation
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function donate() {
+      alert("Thank you for your donation!");
+    }
+
+  </script>
+
+</body>
+
+</html>

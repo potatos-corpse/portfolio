@@ -38,7 +38,7 @@ nav {
     width: 25%;
 }
 
-nav a {
+a {
     flex: 1;
     padding: 40px 20px;
     text-align: center;
@@ -55,6 +55,6 @@ body {
     overflow-x: hidden;
 }
 
-nav a {
+a {
     border-radius: 4px;
 }
